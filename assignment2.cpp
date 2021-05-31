@@ -23,6 +23,7 @@ void removeDuplicate(vector<int> &v){
     it=unique(v.begin(),v.end());
     v.resize(distance(v.begin(),it));
 }
+
 int main(){
     int n;
     cout<<"Enter the size of array : "<<endl;
