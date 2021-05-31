@@ -1,5 +1,30 @@
 #include<bits/stdc++.h>
 using namespace std;
+//Function to find First occurence positive number
+int firstOccPositve(int arr[], int low, int high)
+{
+	if(high >= low)
+    {
+        int mid = (low + high)/2;
+        if(mid == arr[mid]){
+            return mid;
+        }
+        if(mid > arr[mid]){
+             return firstOccPositve(arr, (mid + 1), high);
+        }
+
+        else{
+            return firstOccPositve(arr, low, (mid -1));
+        }
+    }
+    return -1;
+}
+//Removing duplicate elements
+void removeDuplicate(vector<int> &v){
+    vector<int>::iterator it;
+    it=unique(v.begin(),v.end());
+    v.resize(distance(v.begin(),it));
+}
 int main(){
     int n;
     cout<<"Enter the size of array : "<<endl;
