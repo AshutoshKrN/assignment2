@@ -18,6 +18,12 @@ int firstOccPositve(int arr[], int low, int high)
     }
     return -1;
 }
+void removeDuplicate(vector<int> &v){
+    vector<int>::iterator it;
+    it=unique(v.begin(),v.end());
+    v.resize(distance(v.begin(),it));
+}
+
 int main(){
     int n;
     cout<<"Enter the size of array : "<<endl;
