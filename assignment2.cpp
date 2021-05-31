@@ -1,5 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
+int firstOccPositve(int arr[], int low, int high)
+{
+	if(high >= low)
+    {
+        int mid = (low + high)/2;
+        if(mid == arr[mid]){
+            return mid;
+        }
+        if(mid > arr[mid]){
+             return firstOccPositve(arr, (mid + 1), high);
+        }
+
+        else{
+            return firstOccPositve(arr, low, (mid -1));
+        }
+    }
+    return -1;
+}
 int main(){
     int n;
     cout<<"Enter the size of array : "<<endl;
